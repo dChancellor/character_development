@@ -1,0 +1,432 @@
+<html>
+<head>
+	  <title>World Creator</title>
+	  <meta charset="utf-8"/>
+	  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	  <link rel="stylesheet" type="text/css" href="char.css">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">	  
+</head>
+<body>	
+	<!-- Site / Account Info -->
+	<div class="sitebar-background">
+		<div class="sitebar-container"></div>
+	</div>
+	<!-- Content / Nav Bar -->
+	<div class="navbar-background">
+		<nav class="navbar-container">
+			<button class="TEMP-character-selector" type="button" id="charID1" onclick="TEMPcharacterSelector('1')">1</button>
+			<button class="TEMP-character-selector" type="button" id="charID2" onclick="TEMPcharacterSelector('2')">2</button>
+			<button class="TEMP-character-selector" type="button" id="charID2" onclick="TEMPcharacterSelector('3')">Marcus Paine</button>
+			<input type="checkbox" id="TEMP-combat-changer" onclick="swapRightColumn()">Activate Combat</input>
+		</nav>
+	</div>
+	<!-- Main Site -->
+	<section class="main-site-content">
+		<section class="charactersheet">			
+			<!-- Character Selector / Rest Etc Bar -->
+			<section class="characterbar-container">
+			</section>
+			<section class="charactersheet-content"
+				<!-- Top Stat Bar -->
+				<section class="topbar-full-container">
+					<!-- Half Lines Top Stat Bar -->
+					<section id="topbar-firsthalf-container" class="topbar-half-container">		
+							<!-- Core Stat Bar Containers -->
+							<div id="strength-statbox" class="js-open-rip topbar-boxes stat-box">
+								<div id="strength-statbox-title" class="js-open-rip font-internal-title">strength</div>														
+								<div id="strength-statbox-modifier-score" class="js-open-rip modifierbox font-internal-number-big"></div>						
+								<div id="strength-statbox-rawscore" class="js-open-rip font-internal-numbersecondary"></div>
+							</div>
+							<div id="dexterity-statbox" class="js-open-rip topbar-boxes stat-box">
+								<div id="dexterity-statbox-title" class="js-open-rip font-internal-title">dexterity</div>													
+								<div id="dexterity-statbox-modifier-score" class="js-open-rip modifierbox font-internal-number-big"></div>							
+								<div id="dexterity-statbox-rawscore" class="js-open-rip font-internal-numbersecondary"></div>
+							</div>
+							<div id="constitution-statbox" class="js-open-rip topbar-boxes stat-box">
+								<div id="constitution-statbox-title" class="js-open-rip font-internal-title">constitution</div>														
+								<div id="constitution-statbox-modifier-score" class="js-open-rip modifierbox font-internal-number-big"></div>							
+								<div id="constitution-statbox-rawscore" class="js-open-rip font-internal-numbersecondary"></div>
+							</div>
+							<div id="intelligence-statbox" class="js-open-rip topbar-boxes stat-box">
+								<div id="intelligence-statbox-title" class="js-open-rip font-internal-title">intelligence</div>														
+								<div id="intelligence-statbox-modifier-score" class="js-open-rip modifierbox font-internal-number-big"></div>							
+								<div id="intelligence-statbox-rawscore" class="js-open-rip font-internal-numbersecondary"></div>
+							</div>
+							<div id="wisdom-statbox" class="js-open-rip topbar-boxes stat-box">
+								<div id="wisdom-statbox-title" class="js-open-rip font-internal-title">wisdom</div>															
+								<div id="wisdom-statbox-modifier-score" class="js-open-rip modifierbox font-internal-number-big"></div>							
+								<div id="wisdom-statbox-rawscore" class="js-open-rip font-internal-numbersecondary"></div>
+							</div>
+							<div id="charisma-statbox" class="js-open-rip topbar-boxes stat-box">
+								<div id="charisma-statbox-title" class="js-open-rip font-internal-title">charisma</div>														
+								<div id="charisma-statbox-modifier-score" class="js-open-rip modifierbox font-internal-number-big"></div>						
+								<div id="charisma-statbox-rawscore" class="js-open-rip font-internal-numbersecondary"></div>
+							</div>						
+					</section>	
+					<!-- Other Half of Top Line -->
+					<section id="topbar-secondhalf-container" class="topbar-half-container">					
+							<!-- Speed Box -->
+							<div id="speed-statbox" class="js-open-rip topbar-boxes">	
+								<div id="speed-statbox-title" class="js-open-rip font-internal-title">Walking</div>
+								<div id="speed-statbox-numbercontainer" class="js-open-rip modifierbox">
+									<div id="speed-statbox-score" class="js-open-rip font-internal-number-big"></div>
+									<div id="speed-statbox-ft" class="js-open-rip font-internal-addtnlvalue">ft.</div>
+								</div>
+								<div id="speed-text" class="js-open-rip font-internal-secondary">Speed</div>	
+							</div>	
+							<!-- Proficiency Box -->
+							<div id="proficiency-statbox" class="js-open-rip topbar-boxes">
+								<div id="proficiency-statbox-title" class="js-open-rip font-internal-title">Proficiency</div>							
+								<div id="proficiency-statbox-score" class="js-open-rip modifierbox font-internal-number-big"></div>						
+								<div id="proficiency-text" class="js-open-rip font-internal-secondary">Bonus</div>
+							</div>					
+							<!-- Inspiration Box -->					
+							<div id="inspiration-statbox" class="js-open-rip">
+								<div id="inspiration-statbox-checkbox" class="js-open-rip topbar-boxes">
+									<div id="inspiration-statbox-checkyes" class="js-open-rip"></div>
+								</div>
+								<div id="inspiration-statbox-textbox" class="js-open-rip font-internal-secondary">Inspiration</div>
+							</div>
+							<!-- Health Box -->					
+							<div id="health-statbox" class="js-open-rip topbar-boxes">	
+									<!-- Health Buttons -->
+									<div id="health-statbox-addsubtract">
+										<button id="heal" type="button" class="change-health-button font-internal-secondary" onclick="healthCalculator('heal')">heal</button>
+										<input type="number" class="font-internal-secondary" id="health-input" min="0"></input>
+										<button id="damage" type="button" class="change-health-button font-internal-secondary" onclick="healthCalculator('damage')">damage</button>
+									</div>		
+									<!-- Health Numbers -->								
+									<div id="health-statbox-currentandmax-container" class="js-open-rip">
+										<div id="health-statbox-totals" class="js-open-rip">
+											<div id="health-statbox-currenthpbox" class="js-open-rip hpboxes">
+												<div id="health-statbox-currenthptitle" class="js-open-rip hptitle font-internal-title">Current</div>
+												<div id="health-statbox-currenthp" class="js-open-rip hpnumber font-internal-number-big"></div>
+											</div>
+											<div id="health-statbox-slash" class="js-open-rip font-internal-addtnlvalue">/</div>									
+											<div id="health-statbox-maxhpbox" class="js-open-rip hpboxes">
+												<div id="health-statbox-maxhptitle" class="js-open-rip hptitle font-internal-title">Max</div>
+												<div id="health-statbox-maxhp" class="js-open-rip hpnumber font-internal-number-big"></div>
+											</div>
+										</div>
+										<div id="health-statbox-titletext" class="js-open-rip font-internal-secondary">Hit Points</div>								
+									</div>
+									<!-- Temp Health -->
+									<div id="health-statbox-temphp-box" class="js-open-rip">
+										<div id="health-statbox-temphptitle" class="js-open-rip hptitle font-internal-title">Temp</div>					
+										<input id="health-statbox-temphp-input" type="number" class="hpnumber font-internal-number-big" min="0" oninput="tempHealthCalculator()"></input>
+									</div>					
+							</div>						
+					</section>
+				</section>
+				<!-- Bars Line - Encumberance and Exhaustion-->
+				<section class="ee-bars">
+					<!-- Exhaustion Bar -->
+					<section id="exhaustion-bar" class="js-open-rip bar-containers">
+						<button class="exhaustion-buttons font-internal-number-really-big" onclick="exhaustionCalculator('subtract')">-</button>
+						<div id="exhaustion-bar-empty" class="js-open-rip">
+							<div id="exhaustion-bar-full" class="js-open-rip"></div>
+							<div class="js-open-rip bar-titles font-internal-title">Exhaustion</div>
+						</div>
+						<button class="exhaustion-buttons font-internal-number-really-big" onclick="exhaustionCalculator('add')">+</button>
+					</section>
+					<!-- Encumberance Bar -->
+					<section id="encumberance-bar" class="js-open-rip bar-containers">
+						<div id="encumberance-bar-empty" class="js-open-rip">
+							<div id="encumberance-bar-full" class="js-open-rip"></div>
+							<div class="js-open-rip bar-titles font-internal-title">Encumberance</div>
+						</div>
+					</section>
+				</section>			
+				<!-- Main Boxes -->
+				<section class="main-panes">
+				<!-- Left Two Columns in Main Pane -->
+				<section class="mainpanes-leftandmiddle-columns">
+					<!-- Left Column -->
+					<div class="mainpanes-left-column">
+						<!-- Left Column Containers -->
+						<!-- Saving Throws Box -->
+						<div id="savingthrows-container" class="js-open-rip mainpanes-containers mainpanes-leftcolumn-containers">
+							<div id="savingthrows-scores" class="js-open-rip">
+								<div id="savingthrows-leftcolumn" class="js-open-rip savingthrows-columns">
+									<div id="savingthrows-strength-throw" class="js-open-rip savingthrow-rows">
+										<div id="savingthrows-strength-icon" class="js-open-rip savingthrow-icons"></div>
+										<div id="savingthrows-strength-text" class="js-open-rip savingthrow-texts font-internal-title">str</div>
+										<div id="savingthrows-strength-modifier" class="js-open-rip savingthrow-modifiers font-internal-numbersecondary">2</div>
+									</div>
+									<div id="savingthrows-dexterity-throw" class="js-open-rip savingthrow-rows">
+										<div id="savingthrows-dexterity-icon" class="js-open-rip savingthrow-icons"></div>
+										<div id="savingthrows-dexterity-text" class="js-open-rip savingthrow-texts font-internal-title">dex</div>
+										<div id="savingthrows-dexterity-modifier" class="js-open-rip savingthrow-modifiers font-internal-numbersecondary">2</div>
+									</div>
+									<div id="savingthrows-constitution-throw" class="js-open-rip savingthrow-rows">
+										<div id="savingthrows-constitution-icon" class="js-open-rip savingthrow-icons"></div>
+										<div id="savingthrows-constitution-text" class="js-open-rip savingthrow-texts font-internal-title">con</div>
+										<div id="savingthrows-constitution-modifier" class="js-open-rip savingthrow-modifiers font-internal-numbersecondary">2</div>
+									</div>
+								</div>
+								<div id="savingthrows-rightcolumn" class="js-open-rip savingthrows-columns">
+									<div id="savingthrows-intelligence-throw" class="js-open-rip savingthrow-rows">
+										<div id="savingthrows-intelligence-icon" class="js-open-rip savingthrow-icons"></div>
+										<div id="savingthrows-intelligence-text" class="js-open-rip savingthrow-texts font-internal-title">int</div>
+										<div id="savingthrows-intelligence-modifier" class="js-open-rip savingthrow-modifiers font-internal-numbersecondary">2</div>
+									</div>
+									<div id="savingthrows-wisdom-throw" class="js-open-rip savingthrow-rows">
+										<div id="savingthrows-wisdom-icon" class="js-open-rip savingthrow-icons"></div>
+										<div id="savingthrows-wisdom-text" class="js-open-rip savingthrow-texts font-internal-title">wis</div>
+										<div id="savingthrows-wisdom-modifier" class="js-open-rip savingthrow-modifiers font-internal-numbersecondary">2</div>
+									</div>
+									<div id="savingthrows-charisma-throw" class="js-open-rip savingthrow-rows">
+										<div id="savingthrows-charisma-icon" class="js-open-rip savingthrow-icons"></div>
+										<div id="savingthrows-charisma-text" class="js-open-rip savingthrow-texts font-internal-title">cha</div>
+										<div id="savingthrows-charisma-modifier" class="js-open-rip savingthrow-modifiers font-internal-numbersecondary">2</div>
+									</div>								
+								</div>
+							</div>
+							<div id="savingthrows-additional" class="js-open-rip"></div>
+							<div id="savingthrows-title" class="js-open-rip font-internal-secondary">Saving Throws</div>			
+						</div>
+						<!-- Senses Box -->
+						<div id="senses-container" class="js-open-rip mainpanes-containers mainpanes-leftcolumn-containers">
+							<div id="senses-scores" class="js-open-rip">
+								<div id="senses-perception" class="js-open-rip senses-rows">
+									<div id="senses-perception-modifier" class="js-open-rip senses-modifiers font-internal-numbersecondary">2</div>
+									<div id="senses-perception-text" class="js-open-rip senses-texts font-internal-title">passive wis (perception)</div>									
+								</div>
+								<div id="senses-investigation" class="js-open-rip senses-rows">	
+									<div id="senses-investigation-modifier" class="js-open-rip senses-modifiers font-internal-numbersecondary">2</div>
+									<div id="senses-investigation-text" class="js-open-rip senses-texts font-internal-title">passive int (investigation)</div>									
+								</div>
+								<div id="senses-insight" class="js-open-rip senses-rows">									
+									<div id="senses-insight-modifier" class="js-open-rip senses-modifiers font-internal-numbersecondary">2</div>
+									<div id="senses-insight-text" class="js-open-rip senses-texts font-internal-title">passive wis (insight)</div>									
+								</div>
+							</div>								
+							<div id="senses-additional" class="js-open-rip"></div>
+							<div id="senses-title" class="js-open-rip font-internal-secondary">Senses</div>						
+						</div>
+						<!-- Proficiencies Box -->
+						<div id="proficiencies-container" class="js-open-rip mainpanes-containers mainpanes-leftcolumn-containers">
+							<div id="proficiencies-groups" class="js-open-rip">
+								<div id="proficiencies-armor-container" class="js-open-rip proficiencies-containers">
+									<div id="proficiencies-armor-title" class="js-open-rip proficiencies-grouptitles font-internal-title">armor</div>
+									<div id="proficiencies-armor-list" class="js-open-rip font-internal-normal">Chain Mail</div>
+								</div>
+								<div id="proficiencies-weapons-container" class="js-open-rip proficiencies-containers">
+									<div id="proficiencies-weapons-title" class="js-open-rip proficiencies-grouptitles font-internal-title">weapons</div>
+									<div id="proficiencies-weapons-list" class="js-open-rip font-internal-normal">Shortsword</div>
+								</div>
+								<div id="proficiencies-tools-container" class="js-open-rip proficiencies-containers">
+									<div id="proficiencies-tools-title" class="js-open-rip proficiencies-grouptitles font-internal-title">tools</div>
+									<div id="proficiencies-tools-list" class="js-open-rip font-internal-normal">Disguise Kit</div>
+								</div>
+								<div id="proficiencies-languages-container" class="js-open-rip proficiencies-containers">
+									<div id="proficiencies-languages-title" class="js-open-rip proficiencies-grouptitles font-internal-title">languages</div>
+									<div id="proficiencies-languages-list" class="js-open-rip font-internal-normal">Common</div>
+								</div>
+							</div>
+							<div id="proficiencies-title" class="js-open-rip font-internal-secondary">proficiencies</div>	
+						</div>
+							
+					</div>
+					<!-- Middle Column -->
+					<div class="mainpanes-middle-column">
+						<!-- Skills Container -->
+						<div id="skills-container" class="js-open-rip mainpanes-containers mainpanes-middlecolumn-containers">
+							<div id="skills-categories" class="js-open-rip">
+								<div id="skills-headers" class="js-open-rip skill-rows">
+									<div id="skills-header-prof" class="js-open-rip font-internal-title skill-row-prof">prof</div>
+									<div id="skills-header-mod" class="js-open-rip font-internal-title skill-row-mod">mod</div>
+									<div id="skills-header-skill" class="js-open-rip font-internal-title skill-row-skill">skill</div>
+									<div id="skills-header-bonus" class="js-open-rip font-internal-title skill-row-bonus">bonus</div>
+								</div>
+								<div id="skills-acrobatics" class="js-open-rip skill-rows">
+									<div id="skills-acrobatics-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-acrobatics-mod" class="js-open-rip font-internal-secondary skill-row-mod">dex</div>
+									<div id="skills-acrobatics-skill" class="js-open-rip font-internal-normal skill-row-skill">Acrobatics</div>
+									<div id="skills-acrobatics-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-animalhandling" class="js-open-rip skill-rows">
+									<div id="skills-animalhandling-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-animalhandling-mod" class="js-open-rip font-internal-secondary skill-row-mod">wis</div>
+									<div id="skills-animalhandling-skill" class="js-open-rip font-internal-normal skill-row-skill">Animal Handling</div>
+									<div id="skills-animalhandling-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-arcana" class="js-open-rip skill-rows">
+									<div id="skills-arcana-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-arcana-mod" class="js-open-rip font-internal-secondary skill-row-mod">int</div>
+									<div id="skills-arcana-skill" class="js-open-rip font-internal-normal skill-row-skill">Arcana</div>
+									<div id="skills-arcana-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-deception" class="js-open-rip skill-rows">
+									<div id="skills-deception-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-deception-mod" class="js-open-rip font-internal-secondary skill-row-mod">cha</div>
+									<div id="skills-deception-skill" class="js-open-rip font-internal-normal skill-row-skill">Deception</div>
+									<div id="skills-deception-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-history" class="js-open-rip skill-rows">
+									<div id="skills-history-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-history-mod" class="js-open-rip font-internal-secondary skill-row-mod">int</div>
+									<div id="skills-history-skill" class="js-open-rip font-internal-normal skill-row-skill">History</div>
+									<div id="skills-history-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-insight" class="js-open-rip skill-rows">
+									<div id="skills-insight-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-insight-mod" class="js-open-rip font-internal-secondary skill-row-mod">wis</div>
+									<div id="skills-insight-skill" class="js-open-rip font-internal-normal skill-row-skill">Insight</div>
+									<div id="skills-insight-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-intimidation" class="js-open-rip skill-rows">
+									<div id="skills-intimidation-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-intimidation-mod" class="js-open-rip font-internal-secondary skill-row-mod">cha</div>
+									<div id="skills-intimidation-skill" class="js-open-rip font-internal-normal skill-row-skill">Intimidation</div>
+									<div id="skills-intimidation-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-investigation" class="js-open-rip skill-rows">
+									<div id="skills-investigation-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-investigation-mod" class="js-open-rip font-internal-secondary skill-row-mod">int</div>
+									<div id="skills-investigation-skill" class="js-open-rip font-internal-normal skill-row-skill">Investigation</div>
+									<div id="skills-investigation-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-medicine" class="js-open-rip skill-rows">
+									<div id="skills-medicine-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-medicine-mod" class="js-open-rip font-internal-secondary skill-row-mod">wis</div>
+									<div id="skills-medicine-skill" class="js-open-rip font-internal-normal skill-row-skill">Medicine</div>
+									<div id="skills-medicine-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-nature" class="js-open-rip skill-rows">
+									<div id="skills-nature-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-nature-mod" class="js-open-rip font-internal-secondary skill-row-mod">int</div>
+									<div id="skills-nature-skill" class="js-open-rip font-internal-normal skill-row-skill">Nature</div>
+									<div id="skills-nature-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-perception" class="js-open-rip skill-rows">
+									<div id="skills-perception-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-perception-mod" class="js-open-rip font-internal-secondary skill-row-mod">wis</div>
+									<div id="skills-perception-skill" class="js-open-rip font-internal-normal skill-row-skill">Perception</div>
+									<div id="skills-perception-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-performance" class="js-open-rip skill-rows">
+									<div id="skills-performance-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-performance-mod" class="js-open-rip font-internal-secondary skill-row-mod">cha</div>
+									<div id="skills-performance-skill" class="js-open-rip font-internal-normal skill-row-skill">Performance</div>
+									<div id="skills-performance-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-persuasion" class="js-open-rip skill-rows">
+									<div id="skills-persuasion-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-persuasion-mod" class="js-open-rip font-internal-secondary skill-row-mod">cha</div>
+									<div id="skills-persuasion-skill" class="js-open-rip font-internal-normal skill-row-skill">Persuasion</div>
+									<div id="skills-persuasion-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-religion" class="js-open-rip skill-rows">
+									<div id="skills-religion-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-religion-mod" class="js-open-rip font-internal-secondary skill-row-mod">int</div>
+									<div id="skills-religion-skill" class="js-open-rip font-internal-normal skill-row-skill">Religion</div>
+									<div id="skills-religion-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-sleightofhand" class="js-open-rip skill-rows">
+									<div id="skills-sleightofhand-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-sleightofhand-mod" class="js-open-rip font-internal-secondary skill-row-mod">dex</div>
+									<div id="skills-sleightofhand-skill" class="js-open-rip font-internal-normal skill-row-skill">Sleight of Hand</div>
+									<div id="skills-sleightofhand-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-stealth" class="js-open-rip skill-rows">
+									<div id="skills-stealth-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-stealth-mod" class="js-open-rip font-internal-secondary skill-row-mod">dex</div>
+									<div id="skills-stealth-skill" class="js-open-rip font-internal-normal skill-row-skill">Stealth</div>
+									<div id="skills-stealth-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+								<div id="skills-survival" class="js-open-rip skill-rows">
+									<div id="skills-survival-prof" class="js-open-rip savingthrow-icons skill-row-prof"></div>
+									<div id="skills-survival-mod" class="js-open-rip font-internal-secondary skill-row-mod">wis</div>
+									<div id="skills-survival-skill" class="js-open-rip font-internal-normal skill-row-skill">Survival</div>
+									<div id="skills-survival-bonus" class="js-open-rip font-internal-numbersecondary skill-row-bonus">1</div>
+								</div>
+							</div>
+							<div id="skill-title" class="js-open-rip font-internal-secondary">Skills</div>						
+						</div>
+					</div>
+				</section>				
+				<!-- Right Column -->
+				<section class="mainpanes-right-column">
+					<!-- Roleplay Container -->
+					<div id="roleplay-container" class="mainpanes-containers active-rightwindow mainpanes-rightcolumn-containers">					
+						<nav id="roleplay-navmenu-container" class="mainpain-navbars">
+							<div id="roleplay-character-menu" class="roleplay-menu-buttons active-roleplay-topmenu font-internal-title" onclick="roleplayMenuSelect('character')">character</div>
+							<div id="roleplay-items-menu" class="roleplay-menu-buttons inactive-roleplay-topmenu font-internal-title" onclick="roleplayMenuSelect('items')">items</div>
+							<div id="roleplay-spells-menu" class="roleplay-menu-buttons inactive-roleplay-topmenu font-internal-title" onclick="roleplayMenuSelect('spells')">spells</div>
+							<div id="roleplay-notes-menu" class="roleplay-menu-buttons inactive-roleplay-topmenu font-internal-title" onclick="roleplayMenuSelect('notes')">notes</div>
+						</nav>
+						<div id="roleplay-character-window" class="active-inner-window roleplay-inner-window">
+							<nav id="roleplay-character-submenu"  class="roleplay-submenus">								
+								<div id="roleplay-character-classfeatures-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('classfeatures')">class features</div>
+								<div id="roleplay-character-racialfeatures-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('racialfeatures')">racial features</div>
+								<div id="roleplay-character-feats-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('feats')">feats</div>
+								<div id="roleplay-character-background-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('background')">background</div>
+								<div id="roleplay-character-characteristics-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('characteristics')">characteristics</div>							
+								<div id="roleplay-character-appearance-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('appearance')">appearance</div>
+							</nav>
+							<section id="roleplay-classfeatures-window" class="active-meatywindow">class features</section>
+							<section id="roleplay-racialfeatures-window" class="inactive-meatywindow">racial features</section>
+							<section id="roleplay-feats-window" class="inactive-meatywindow">feats</section>
+							<section id="roleplay-background-window" class="inactive-meatywindow">background</section>
+							<section id="roleplay-characteristics-window" class="inactive-meatywindow">characteristics</section>
+							<section id="roleplay-appearance-window" class="inactive-meatywindow">appearance</section>
+						</div>
+						<div id="roleplay-items-window" class="inactive-inner-window roleplay-inner-window">
+							<nav id="roleplay-items-submenu" class="roleplay-submenus">								
+								<div id="roleplay-equipment-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('equipment')">equipment</div>
+								<div id="roleplay-randomitems-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('randomitems')">items</div>
+								<div id="roleplay-currency-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('currency')">currency</div>						
+							</nav>
+							<section id="roleplay-equipment-window" class="active-meatywindow">equipment</section>
+							<section id="roleplay-randomitems-window" class="inactive-meatywindow">items</section>
+							<section id="roleplay-currency-window" class="inactive-meatywindow">currency</section>
+						</div>
+						<div id="roleplay-spells-window" class="inactive-inner-window roleplay-inner-window"></div>
+						<div id="roleplay-notes-window" class="inactive-inner-window roleplay-inner-window">
+							<nav id="roleplay-notes-submenu" class="roleplay-submenus">		
+								<div id="roleplay-organizations-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('organizations')">orgs</div>
+								<div id="roleplay-allies-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('allies')">allies</div>
+								<div id="roleplay-enemies-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('enemies')">enemies</div>
+								<div id="roleplay-other-button" class="submenu-buttons font-internal-title" onclick="roleplayMeatyWindowSelect('other')">other</div>		
+							</nav>
+							<section id="roleplay-organizations-window" class="active-meatywindow">organizations</section>
+							<section id="roleplay-allies-window" class="inactive-meatywindow">allies</section>
+							<section id="roleplay-enemies-window" class="inactive-meatywindow">enemies</section>
+							<section id="roleplay-other-window" class="inactive-meatywindow">other</section>
+						</div>
+					</div>
+							
+					<!-- Combat Container -->
+					<div id="combat-container" class="mainpanes-containers unactive-rightwindow mainpanes-rightcolumn-containers">Combat</div>
+				</section>
+			</section>		
+		</section>			
+	</section>
+	<!-- Right Info Panel -->
+	<section id="js-rip" class="right-info-pane">
+		<div id="rip-title" class="rip-title"></div>
+		<div id="rip-content" class="rip-content"></div>
+	</section>
+
+<!-- JavaScript Script Loading -->
+<section id="javascripts">
+	<!-- Stat Info for Sidebar -->
+	<script src="sidebarInfo.js"></script> 
+	<!-- Weapons Loaded -->
+	<script src="weapons.js"></script>  
+	<!-- Items Loaded -->
+	<script src="items.js"></script> 
+	<!-- Armor Loaded -->
+	<script src="armors.js"></script>   
+	<!-- Characters Loaded -->
+	<script src="characterList.js"></script>
+	<!-- Races Loaded -->
+	<script src="races.js"></script> 	
+	<!-- Main Javascript Functions -->
+	<script src="char.js"></script>
+	
+	
+</section>	
+</body>

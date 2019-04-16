@@ -1,0 +1,27 @@
+<NotepadPlus>
+    <Session activeView="1">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="569" xOffset="0" scrollWidth="564815" startPos="384392" endPos="384392" selMode="0" lang="CSS" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\char.css" backupFilePath="" originalFileLastModifTimestamp="1532575310" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="1141751808" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="8" xOffset="0" scrollWidth="468" startPos="912" endPos="912" selMode="0" lang="JavaScript" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\characterList.js" backupFilePath="" originalFileLastModifTimestamp="1532563365" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="306" startPos="137" endPos="137" selMode="0" lang="JavaScript" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\races.js" backupFilePath="" originalFileLastModifTimestamp="1532563481" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="558" startPos="0" endPos="0" selMode="0" lang="JavaScript" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\sidebarInfo.js" backupFilePath="" originalFileLastModifTimestamp="1531247675" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="243" startPos="34" endPos="34" selMode="0" lang="JavaScript" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\weapons.js" backupFilePath="" originalFileLastModifTimestamp="1531452632" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="243" startPos="69" endPos="69" selMode="0" lang="JavaScript" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\armors.js" backupFilePath="" originalFileLastModifTimestamp="1531453432" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="1145733120" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="243" startPos="25" endPos="25" selMode="0" lang="JavaScript" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\items.js" backupFilePath="" originalFileLastModifTimestamp="1531453432" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="275" xOffset="0" scrollWidth="3744" startPos="14053" endPos="14053" selMode="0" lang="JavaScript" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\char.js" backupFilePath="" originalFileLastModifTimestamp="1532576560" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+        </mainView>
+        <subView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2551" startPos="31382" endPos="31382" selMode="0" lang="HTML" encoding="-1" filename="C:\Users\derek\OneDrive\D&amp;D Creator - Website\Current Version\Char.html" backupFilePath="" originalFileLastModifTimestamp="1533686744" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no">
+                <Fold line="27" />
+                <Fold line="31" />
+                <Fold line="122" />
+                <Fold line="145" />
+                <Fold line="148" />
+                <Fold line="189" />
+                <Fold line="208" />
+                <Fold line="235" />
+                <Fold line="352" />
+            </File>
+        </subView>
+    </Session>
+</NotepadPlus>
